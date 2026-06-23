@@ -9,7 +9,7 @@ FROM node:20-alpine
 WORKDIR /app
 COPY --from=builder /app/dist ./dist
 COPY --from=builder /app/node_modules ./node_modules
-EXPOSE 4321
+EXPOSE 8000
 ENV HOST=0.0.0.0
-ENV PORT=4321
+ENV PORT=8000
 CMD ["node", "./dist/server/entry.mjs"]
